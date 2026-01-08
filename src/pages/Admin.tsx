@@ -10,7 +10,7 @@ import { toast } from 'sonner';
 import { 
   Scale, LogOut, Plus, Edit, Trash2, Mail, Check, X, 
   LayoutDashboard, FileText, Bell, Users, Search, 
-  Inbox, Settings, Home, Menu
+  Inbox, Settings, Home, Menu, Gavel
 } from 'lucide-react';
 import { format } from 'date-fns';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
@@ -211,11 +211,11 @@ const AdminDashboard = () => {
     <div className="min-h-screen flex w-full bg-gray-50/50">
       <Sidebar className="border-r">
         <SidebarHeader className="border-b p-4">
-           <div className="flex items-center gap-2 text-primary px-2">
-            <div className="h-8 w-8 bg-primary/10 rounded-lg flex items-center justify-center">
-              <Scale className="h-5 w-5" />
+           <div className="flex items-center gap-2 px-2">
+            <div className="h-8 w-8 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-700">
+              <Gavel className="h-5 w-5" />
             </div>
-            <span className="font-serif font-bold text-lg tracking-tight">Court Admin</span>
+            <span className="font-serif font-bold text-xl tracking-tight text-indigo-900">Court Admin</span>
           </div>
         </SidebarHeader>
         <SidebarContent>
