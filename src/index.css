@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Ethiopic:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Federal Court - Finote Selam Design System
+   A professional, authoritative design with Ethiopian heritage accents
+*/
+
+@layer base {
+  :root {
+    /* Core palette - Deep navy authority with gold accents */
+    --background: 210 20% 98%;
+    --foreground: 220 30% 15%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 15%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 15%;
+    
+    /* Primary: Deep Navy Blue - authority, trust */
+    --primary: 220 60% 20%;
+    --primary-foreground: 45 80% 95%;
+    
+    /* Secondary: Warm gold - Ethiopian heritage */
+    --secondary: 45 85% 55%;
+    --secondary-foreground: 220 60% 15%;
+    
+    --muted: 210 15% 93%;
+    --muted-foreground: 220 15% 45%;
+    
+    /* Accent: Rich emerald green - justice, growth */
+    --accent: 160 50% 30%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 220 20% 88%;
+    --input: 220 20% 88%;
+    --ring: 220 60% 30%;
+    
+    --radius: 0.5rem;
+    
+    /* Custom tokens */
+    --gold: 45 85% 55%;
+    --gold-light: 45 80% 75%;
+    --gold-dark: 45 85% 40%;
+    --navy: 220 60% 20%;
+    --navy-light: 220 50% 35%;
+    --navy-dark: 220 70% 12%;
+    --emerald: 160 50% 30%;
+    --emerald-light: 160 45% 45%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(220 60% 18%), hsl(220 65% 25%));
+    --gradient-gold: linear-gradient(135deg, hsl(45 85% 55%), hsl(45 80% 65%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 20% 98%));
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(220 30% 15% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(220 30% 15% / 0.1), 0 2px 4px -2px hsl(220 30% 15% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(220 30% 15% / 0.1), 0 4px 6px -4px hsl(220 30% 15% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(220 30% 15% / 0.1), 0 8px 10px -6px hsl(220 30% 15% / 0.1);
+    --shadow-gold: 0 4px 14px 0 hsl(45 85% 55% / 0.3);
+    
+    /* Sidebar tokens */
+    --sidebar-background: 220 60% 20%;
+    --sidebar-foreground: 45 80% 95%;
+    --sidebar-primary: 45 85% 55%;
+    --sidebar-primary-foreground: 220 60% 15%;
+    --sidebar-accent: 220 50% 30%;
+    --sidebar-accent-foreground: 45 80% 95%;
+    --sidebar-border: 220 50% 30%;
+    --sidebar-ring: 45 85% 55%;
+  }
+
+  .dark {
+    --background: 220 30% 8%;
+    --foreground: 210 20% 95%;
+    
+    --card: 220 30% 12%;
+    --card-foreground: 210 20% 95%;
+    
+    --popover: 220 30% 10%;
+    --popover-foreground: 210 20% 95%;
+    
+    --primary: 45 85% 55%;
+    --primary-foreground: 220 60% 12%;
+    
+    --secondary: 220 50% 25%;
+    --secondary-foreground: 210 20% 95%;
+    
+    --muted: 220 25% 18%;
+    --muted-foreground: 210 15% 65%;
+    
+    --accent: 160 45% 40%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 220 25% 22%;
+    --input: 220 25% 22%;
+    --ring: 45 85% 55%;
+    
+    --sidebar-background: 220 35% 10%;
+    --sidebar-foreground: 210 20% 95%;
+    --sidebar-primary: 45 85% 55%;
+    --sidebar-primary-foreground: 220 60% 12%;
+    --sidebar-accent: 220 40% 20%;
+    --sidebar-accent-foreground: 210 20% 95%;
+    --sidebar-border: 220 30% 18%;
+    --sidebar-ring: 45 85% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+  
+  /* Heading styles with serif font for authority */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    @apply font-semibold tracking-tight;
+  }
+  
+  /* Amharic text styling */
+  .font-ethiopic {
+    font-family: 'Noto Serif Ethiopic', serif;
+  }
+}
+
+@layer components {
+  /* Hero section styling */
+  .hero-section {
+    background: var(--gradient-hero);
+    @apply relative overflow-hidden;
+  }
+  
+  .hero-section::before {
+    content: '';
+    @apply absolute inset-0 opacity-10;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4a843' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  
+  /* Gold accent line */
+  .gold-accent {
+    @apply h-1 w-20 rounded-full;
+    background: var(--gradient-gold);
+  }
+  
+  /* Card hover effects */
+  .hover-card {
+    @apply transition-all duration-300 ease-out;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .hover-card:hover {
+    @apply -translate-y-1;
+    box-shadow: var(--shadow-xl);
+  }
+  
+  /* Value card styling */
+  .value-card {
+    @apply relative overflow-hidden rounded-xl p-6 bg-card border border-border;
+    transition: all 0.3s ease;
+  }
+  
+  .value-card::before {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-1;
+    background: var(--gradient-gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  
+  .value-card:hover::before {
+    transform: scaleX(1);
+  }
+  
+  /* Navigation active state */
+  .nav-link-active {
+    @apply text-secondary font-medium;
+    position: relative;
+  }
+  
+  .nav-link-active::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 right-0 h-0.5 rounded-full;
+    background: hsl(var(--secondary));
+  }
+  
+  /* Section divider */
+  .section-divider {
+    @apply flex items-center gap-4 my-12;
+  }
+  
+  .section-divider::before,
+  .section-divider::after {
+    content: '';
+    @apply flex-1 h-px bg-border;
+  }
+  
+  /* Admin dashboard styling */
+  .admin-card {
+    @apply bg-card rounded-xl border border-border p-6;
+    box-shadow: var(--shadow-md);
+  }
+  
+  /* Bilingual text container */
+  .bilingual-text {
+    @apply space-y-1;
+  }
+  
+  .bilingual-text .am {
+    @apply font-ethiopic text-muted-foreground text-sm;
+  }
+}
+
+@layer utilities {
+  /* Text gradients */
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-gold);
+  }
+  
+  /* Glass effect */
+  .glass {
+    @apply bg-white/80 backdrop-blur-md;
+  }
+  
+  /* Ethiopian pattern overlay */
+  .ethiopian-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0L40 20L20 40L0 20z' fill='%23d4a843' fill-opacity='0.05'/%3E%3C/svg%3E");
+  }
+}
